@@ -28,6 +28,5 @@ jobs:
     steps:
       - run: |
           echo "Hello World! Form with id = ${{ inputs.form_id }} invoked webhook"
-          echo  ${{ inputs.form_data }}
-          env
+          echo  Form Data: ${{ inputs.form_data }}
 
