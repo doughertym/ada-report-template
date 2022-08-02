@@ -5,6 +5,15 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+    inputs:
+      form_id:
+        description: 'The formstack form_id to use for getting values'
+        required: true
+        type: string
+      form_data:
+        description: 'The formstack form data submitted to the webhook'
+        required: true
+        type: string
 
   # Allows external webhook trigger
   repository_dispatch:
@@ -16,6 +25,7 @@ jobs:
 
     steps:
       - run: |
-          echo "Hello World!"
+          echo "Hello World! Form with id = ${{ inputs.form_id }} invoked webhook"
+          echo  ${{ inputs.form_data }}
           env
 
