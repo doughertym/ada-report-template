@@ -1,4 +1,6 @@
 # workflow triggers
+name: Create Report
+
 on:
   push:
     branches: [ main ]
