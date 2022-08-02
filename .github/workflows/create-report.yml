@@ -1,0 +1,19 @@
+# workflow triggers
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+  # Allows external webhook trigger
+  repository_dispatch:
+    types:
+      - webhook
+jobs:
+  create-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        run: echo "Hello World!"
